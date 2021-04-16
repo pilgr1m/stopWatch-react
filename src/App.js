@@ -59,6 +59,8 @@ const App =()=> {
 		clearInterval(interv)
 		setStatus(0)
 		setTime({ms:0, s:0, m:0, h:0})
+		setMarkTime([])
+		setIsMark(false)
 	}
 
 	const resume = () => start()
@@ -75,22 +77,30 @@ const App =()=> {
 	}
 
   return (
-    <div className="App">
-       TIME.r
-	   <hr/>
-       <Display time={time}/>
-       <Btn 
-		 start={start} 
-		 status={status}
-		 stop={stop}
-		 reset={reset}
-		 resume={resume}
-		 mark={mark}
-	   />
-	   <hr/>
-	   <Mark isMark={isMark} markTime={markTime}/>
+    <div className="app">
+		<header>
+			<h2 className="header">stopWatch</h2>
+		</header>
+	   
+       		<Display 
+			   	time={time}
+				isMark={isMark}   
+			/>
+		
+			<Mark 
+				isMark={isMark} 
+				markTime={markTime}
+			/>
+	   
+			<Btn 
+				start={start} 
+				status={status}
+				stop={stop}
+				reset={reset}
+				resume={resume}
+				mark={mark}
+			/>
     </div>
   )
 }
-
 export default App

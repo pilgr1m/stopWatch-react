@@ -1,3 +1,84 @@
-.App {
-  text-align: center;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.app {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 60%;
+	height: 100vh;
+	border: 1px solid #000;
+  	text-align: center;
+	font-family: 'Lato', sans-serif;
+	margin: 0 auto;
+}
+
+.app header {
+	font-size: 20px;
+	font-weight: 500;
+	position: absolute;
+	top: 0;
+	padding-top: 1%;
+	padding-bottom: 1%;
+	width: 100%;
+	background-color: rgb(128, 128, 128);
+}
+
+.displayWrapper{
+	position: absolute;
+	top: 35%;
+	font-size: 46px;
+}
+
+.withMarks{
+	position: absolute;
+	top: 25%;
+	left: 2%;
+	font-size: 32px;
+	
+}
+
+
+.markWrapper{
+	position: absolute;
+	top: 42%;
+	width: 100%;
+	border: 1px solid rgba(153, 205, 50, 0.657);
+}
+
+.markWrapper .markFlex {
+  	display: flex;
+	justify-content: space-around;
+}
+
+.btnWrapper{
+	position: absolute;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+
+	width: 200px;
+	bottom: 10%;
+}
+
+.btnWrapper button {
+	cursor: pointer;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	border: none;
+	outline: none;
+	background-color: rgb(255, 255, 255);
+	border: 0.5px solid rgb(111, 128, 144,0.30);
+	box-shadow: 1px 1px 6px 6px  rgb(112, 128, 144,0.2);
+}
+
+.btnWrapper button span {
+	font-size: 20px;
+	color: rgba(34, 131, 248, 1)
 }

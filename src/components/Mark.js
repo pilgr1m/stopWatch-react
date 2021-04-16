@@ -3,42 +3,50 @@ import {re, reHour} from './Display'
 
 const Mark = ({isMark, markTime}) => {
 
-    console.log(markTime) 
-
-    const odds = (ms, sec, min, hour) => {
-        let h = hour * 36000
-        let m = min * 600
+    const timeToNum = (ms, sec, min, hour) => {
+        let h = hour * 360000
+        let m = min * 6000
         let s = sec * 100
-        
         let num = ms + s + m + h
+
         return num
     }
-
 
     return (
         <>
             {isMark === true 
-            ? <>
+            ? <div className="markWrapper">
                 {markTime.map((item,index) => {
-                    console.log(item)
-                    console.log((item-1))
                     const {ms,s,m,h} = item
-                    return  <div key={index}>
-                                <span>{index+1} ---</span>
-                                <span> +{odds(ms,s,m,h)} 
+                    let prev = index > 0 ? markTime[index - 1]: item
+                    let currentValue = timeToNum(ms,s,m,h)
+                    let previousValue = timeToNum(prev.ms, prev.s, prev.m, prev.h)
+                    let summ = currentValue - previousValue
 
-                                - {odds((item-1).ms,(item-1).s,(item-1).m,(item-1).h)} 
-                                - {odds((item).ms,(item).s,(item).m,(item).h)} 
-                                
-                                ---</span>
-                                {reHour(item.h)} 
-                                <span> {re(item.m)} </span>:
-                                <span> {re(item.s)} </span>.
-                                <span> {re(item.ms)} </span>
+                    return  <div key={index} className="markFlex">
+                                <div>
+                                    <span> {re(index+1)}. </span>
+                                </div>
 
+                                <div>
+                                    <span>
+                                        +{reHour(Math.floor(summ / 360000))}
+                                        {re(Math.floor(summ / 6000) % 60)}: 
+                                        {re(Math.floor(summ / 100) % 60)}.
+                                        {re(summ % 100)}
+                                    </span> 
+                                </div>
+
+                                <div>
+                                    <span>
+                                        {reHour(h)}
+                                        {re(item.m)}:{re(item.s)}.{re(item.ms)} 
+                                    </span>
+                                </div>
+                               
                             </div>
                 })}
-                </>
+                </div>
             : null
             }
         </>

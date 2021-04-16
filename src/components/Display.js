@@ -8,16 +8,22 @@ export const reHour = (h) =>{
     if(h === 0 ){
         return null
     } else {
-       return `<span> ${re(h)} </span>:` 
+       return (
+           <span>
+               <span> {re(h)} </span>: 
+           </span>
+       )
     }
 }
 
-const Display = ({time}) => {
+const Display = ({time, isMark}) => {
+   
+    let withMarks = isMark ? "withMarks" : ""
 
     const {ms,s,m,h} = time
 
     return (
-        <div>
+        <div className={`displayWrapper ${withMarks}` }>
             {reHour(h)} 
             <span> {re(m)} </span>:
             <span> {re(s)} </span>.
