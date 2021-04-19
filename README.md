@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# stopWatch app
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+link gp  [stopWatch](https://github.com/facebook/create-react-app).
 
 
 
