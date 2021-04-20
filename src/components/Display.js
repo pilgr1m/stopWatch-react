@@ -19,6 +19,9 @@ export const reHour = (h) =>{
 const Display = ({time, isMark}) => {
    
     let withMarks = isMark ? "withMarks" : ""
+    const text = `Current time`
+        
+    
 
     const {ms,s,m,h} = time
 
@@ -28,6 +31,7 @@ const Display = ({time, isMark}) => {
             <span> {re(m)} </span>:
             <span> {re(s)} </span>.
             <span> {re(ms)} </span>
+            <div className="textMark"> {isMark ? text : null} </div>
         </div>
     )
 }

@@ -42,9 +42,9 @@ const App =()=> {
 			updateM++
 			updateS = 0
 		}
-		if(updateMs === 100){
+		if(updateMs === 99){
 			updateS++
-			updateMs = 0
+			updateMs = -1
 		}
 		updateMs++
 		return setTime({ms:updateMs, s:updateS, m:updateM, h:updateH})
@@ -79,7 +79,9 @@ const App =()=> {
   return (
     <div className="app">
 		<header>
-			<h2 className="header">stopWatch</h2>
+			<h2 className="header">
+				stop<span>W</span>atch
+			</h2>
 		</header>
 	   
        		<Display 
@@ -100,6 +102,9 @@ const App =()=> {
 				resume={resume}
 				mark={mark}
 			/>
+		<footer> 
+			<span>app by <a href="https://www.linkedin.com/in/vanja-volokha/">Ivan Volokha</a> </span>
+		</footer>
     </div>
   )
 }

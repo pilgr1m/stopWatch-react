@@ -25,11 +25,14 @@ const Mark = ({isMark, markTime}) => {
 
                     return  <div key={index} className="markFlex">
                                 <div>
-                                    <span> {re(index+1)}. </span>
+                                    <span className="material-icons-round" id="marks"> done </span> 
+                                    <span className="numOfMark"> 
+                                        {re(index+1)} 
+                                    </span>
                                 </div>
 
                                 <div>
-                                    <span>
+                                    <span className="different">
                                         +{reHour(Math.floor(summ / 360000))}
                                         {re(Math.floor(summ / 6000) % 60)}: 
                                         {re(Math.floor(summ / 100) % 60)}.
@@ -38,7 +41,7 @@ const Mark = ({isMark, markTime}) => {
                                 </div>
 
                                 <div>
-                                    <span>
+                                    <span >
                                         {reHour(h)}
                                         {re(item.m)}:{re(item.s)}.{re(item.ms)} 
                                     </span>
