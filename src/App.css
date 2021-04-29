@@ -135,6 +135,61 @@
 	color: #2283F8;
 	box-shadow: 1px 1px 10px 4px  rgb(94, 99, 104, 0.16);
 }
+/* --------- */
+.checkbox {
+	position: absolute;
+	bottom: 18%;
+	left: 115%;
+}
+
+.custom-checkbox {
+	position: relative;
+	cursor: pointer;
+	display: block;
+	line-height: 20px;
+}
+
+.custom-checkbox-button {
+	display: block;
+	margin: 0 25px;
+	width: 35px;
+	border-radius: 12px;
+	background: rgb(118, 118, 118);
+	height: 20px;
+	position: relative;
+	bottom: -4px;
+	cursor: pointer;
+}
+
+.custom-checkbox-button:before {
+  position: absolute;
+	bottom: 0px;
+	left: -6px;
+	-webkit-transition: 0.2s;
+	transition: 0.2s;
+}
+
+.custom-checkbox.checked .custom-checkbox-button:before {
+  left: 10px;
+  content: "🌙";
+}
+
+.custom-checkbox .custom-checkbox-button:before {
+	right: 40px;
+	content: "☀️";
+}
+
+.custom-checkbox .custom-checkbox-button {
+	border: 0.5px solid rgba(73, 73, 73, 0.15);
+	background-color: rgb(56, 59, 63);
+}
+
+.custom-checkbox.checked .custom-checkbox-button {
+	border: 0.5px solid rgba(73, 73, 73, 0.15);
+	background-color: rgb(181, 188, 197);
+}
+
+
 
 
 

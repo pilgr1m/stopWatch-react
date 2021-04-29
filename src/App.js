@@ -1,16 +1,17 @@
-import React, {useState} from 'react'
+import React, { useState, useContext } from 'react'
 import Btn from './components/Btn'
 import Display from './components/Display'
 import './App.css'
 import Mark from './components/Mark'
+import Header from './components/Header'
 
-const App =()=> {
+const App = () => {
 
 	const [time, setTime] = useState({
-		ms:0,
-		s:0,
-		m:0,
-		h:0
+		ms: 0,
+		s: 0,
+		m: 0,
+		h: 0
 	})
 	const [interv, setInterv] = useState()
 	const [status, setStatus] = useState(0)
@@ -20,7 +21,11 @@ const App =()=> {
 
 	const [isMark, setIsMark] = useState(false)
 	const [markTime, setMarkTime] = useState([])
-
+	//theme
+	const [theme, setTheme] = useState('light')
+	const [isChecked, setCheck] = useState(true)
+	console.log(isChecked)
+	console.log(theme)
 
 	const start = () => {
 		run()
@@ -28,26 +33,26 @@ const App =()=> {
 		setInterv(setInterval(run, 10))
 	}
 
-	let updateMs = time.ms, 
-		updateS = time.s, 
-		updateM = time.m, 
+	let updateMs = time.ms,
+		updateS = time.s,
+		updateM = time.m,
 		updateH = time.h
-		
+
 	const run = () => {
-		if(updateM === 60){
+		if (updateM === 60) {
 			updateH++
 			updateM = 0
 		}
-		if(updateS === 60){
+		if (updateS === 60) {
 			updateM++
 			updateS = 0
 		}
-		if(updateMs === 99){
+		if (updateMs === 99) {
 			updateS++
 			updateMs = -1
 		}
 		updateMs++
-		return setTime({ms:updateMs, s:updateS, m:updateM, h:updateH})
+		return setTime({ ms: updateMs, s: updateS, m: updateM, h: updateH })
 	}
 
 	const stop = () => {
@@ -58,7 +63,7 @@ const App =()=> {
 	const reset = () => {
 		clearInterval(interv)
 		setStatus(0)
-		setTime({ms:0, s:0, m:0, h:0})
+		setTime({ ms: 0, s: 0, m: 0, h: 0 })
 		setMarkTime([])
 		setIsMark(false)
 	}
@@ -76,36 +81,38 @@ const App =()=> {
 		setMarkTime([...markTime, obj])
 	}
 
-  return (
-    <div className="app">
-		<header>
-			<h2 className="header">
-				stop<span>W</span>atch
-			</h2>
-		</header>
-	   
-       		<Display 
-			   	time={time}
-				isMark={isMark}   
+	const themes = () => {
+		setTheme(theme === 'light' ? 'dark' : 'light')
+		setCheck(!isChecked)
+	}
+
+	return (
+		<div className={`app ${theme}`}>
+			<Header isChecked={isChecked} changeTheme={themes} />
+
+			<Display
+				time={time}
+				isMark={isMark}
 			/>
-		
-			<Mark 
-				isMark={isMark} 
+
+			<Mark
+				isMark={isMark}
 				markTime={markTime}
 			/>
-	   
-			<Btn 
-				start={start} 
+
+			<Btn
+				start={start}
 				status={status}
 				stop={stop}
 				reset={reset}
 				resume={resume}
 				mark={mark}
 			/>
-		<footer> 
-			<span>app by <a href="https://www.linkedin.com/in/vanja-volokha/">Ivan Volokha</a> </span>
-		</footer>
-    </div>
-  )
+
+			<footer>
+				<span>app by <a href="https://www.linkedin.com/in/vanja-volokha/">Ivan Volokha</a> </span>
+			</footer>
+		</div>
+	)
 }
 export default App
