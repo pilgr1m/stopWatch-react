@@ -56,7 +56,6 @@
 	position: absolute;
 	padding-left: 8px;
 	top: 25%;
-	/* text-align: left; */
 	font-size: 42px;
 	font-weight: 500;
 	color: rgb(0, 0, 0, 0.9);
@@ -146,14 +145,12 @@
 	bottom: 18%;
 	left: 115%;
 }
-
 .custom-checkbox {
 	position: relative;
 	cursor: pointer;
 	display: block;
 	line-height: 20px;
 }
-
 .custom-checkbox-button {
 	display: block;
 	margin: 0 25px;
@@ -165,7 +162,6 @@
 	bottom: -4px;
 	cursor: pointer;
 }
-
 .custom-checkbox-button:before {
   position: absolute;
 	bottom: 0px;
@@ -173,38 +169,30 @@
 	-webkit-transition: 0.2s;
 	transition: 0.2s;
 }
-
 .custom-checkbox.checked .custom-checkbox-button:before {
   left: 10px;
   content: "🌙";
 }
-
 .custom-checkbox .custom-checkbox-button:before {
 	right: 40px;
 	content: "☀️";
 }
-
 .custom-checkbox .custom-checkbox-button {
 	border: 0.5px solid rgba(73, 73, 73, 0.15);
 	background-color: rgb(56, 59, 63);
 }
-
 .custom-checkbox.checked .custom-checkbox-button {
 	border: 0.5px solid rgba(73, 73, 73, 0.15);
 	background-color: rgb(181, 188, 197);
 }
-
 /* dark theme ------------------------*/
-
 /* dark-blue: rgb(121, 158, 216);
 	~white: rgb(232, 234, 237);
 	bgc: rgb(32, 33, 36);
-
 */
 
 .app.dark {
-	background-color: rgb(32, 33, 36);
-	border: 1px solid rgb(232, 234, 237, 0.5);	
+	background-color: rgb(32, 33, 36);	
 }
 .app.dark header {
 	color:rgb(232, 234, 237);
@@ -229,6 +217,9 @@
 	color:rgb(232, 234, 237, 0.7);
 }
 .app.dark .markWrapper{
+	color: rgb(232, 234, 237);
+}
+.app.dark .markWrapper .markFlex{
 	color: rgb(232, 234, 237);
 }
 .app.dark .markWrapper::-webkit-scrollbar {
