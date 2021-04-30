@@ -15,17 +15,14 @@ const App = () => {
 	})
 	const [interv, setInterv] = useState()
 	const [status, setStatus] = useState(0)
-	//0- not started
-	//1- started
-	//2- stopped
+	//0- not started, 1- started, 2- stopped
 
 	const [isMark, setIsMark] = useState(false)
 	const [markTime, setMarkTime] = useState([])
+
 	//theme
 	const [theme, setTheme] = useState("dark")
 	const [isChecked, setCheck] = useState(true)
-	console.log(isChecked)
-	console.log(theme)
 
 	const start = () => {
 		run()

@@ -1,7 +1,6 @@
 import React from 'react'
 
 function Checkbox({ isChecked, changeTheme }) {
-	console.log(isChecked)
 	return (
 		<div className="checkbox">
 			<label
