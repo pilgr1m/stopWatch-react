@@ -22,7 +22,7 @@ const App = () => {
 	const [isMark, setIsMark] = useState(false)
 	const [markTime, setMarkTime] = useState([])
 	//theme
-	const [theme, setTheme] = useState('light')
+	const [theme, setTheme] = useState("dark")
 	const [isChecked, setCheck] = useState(true)
 	console.log(isChecked)
 	console.log(theme)
@@ -82,7 +82,7 @@ const App = () => {
 	}
 
 	const themes = () => {
-		setTheme(theme === 'light' ? 'dark' : 'light')
+		setTheme(theme === "light" ? "dark" : "light")
 		setCheck(!isChecked)
 	}
 
