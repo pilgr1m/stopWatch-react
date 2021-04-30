@@ -107,7 +107,7 @@ const App = () => {
 			/>
 
 			<footer>
-				<span>app by <a href="https://www.linkedin.com/in/vanja-volokha/">Ivan Volokha</a> </span>
+				<span>app by <a href="https://www.linkedin.com/in/vanja-volokha/">Ivan Volokha</a> 2021</span>
 			</footer>
 		</div>
 	)

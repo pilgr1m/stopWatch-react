@@ -26,7 +26,7 @@
 	font-size: 20px;
 	font-weight: 500;
 	color:rgb(108, 112, 116);
-
+	width: 100%;
 }
 .app header span {
 	color: rgb(34, 131, 248);
@@ -116,7 +116,6 @@
 }
 .numOfMark{
 	color: rgb(0, 0, 0, 0.9);
-	color: red;
 	position: relative;
 	bottom: 7px;
 	left: 7px;
@@ -142,8 +141,8 @@
 /* --------- */
 .checkbox {
 	position: absolute;
-	bottom: 18%;
-	left: 115%;
+	bottom: 15%;
+	right: 0;
 }
 .custom-checkbox {
 	position: relative;
@@ -165,16 +164,16 @@
 .custom-checkbox-button:before {
   position: absolute;
 	bottom: 0px;
-	left: -6px;
+	left: -5px;
 	-webkit-transition: 0.2s;
 	transition: 0.2s;
 }
 .custom-checkbox.checked .custom-checkbox-button:before {
-  left: 10px;
+  right: 10px;
   content: "🌙";
 }
 .custom-checkbox .custom-checkbox-button:before {
-	right: 40px;
+	left: -4px;
 	content: "☀️";
 }
 .custom-checkbox .custom-checkbox-button {
@@ -255,13 +254,10 @@
 	background: rgb(118, 118, 118);
 }
 .app.dark .custom-checkbox.checked .custom-checkbox-button:before {
-  left: 10px;
+  left: 11px;
   content: "🌙";
 }
-.app.dark .custom-checkbox .custom-checkbox-button:before {
-	right: 40px;
-	content: "☀️";
-}
+
 .app.dark .custom-checkbox .custom-checkbox-button {
 	border: 0.5px solid rgba(73, 73, 73, 0.15);
 	background-color: rgb(32, 33, 36);
